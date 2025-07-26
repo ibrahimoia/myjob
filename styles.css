@@ -122,7 +122,7 @@ input[type="submit"]:hover {
 /*--- Navbar & Menu Styles ---*/
 .navbar {
     background-color: #333;
-    overflow: hidden; /* Clear floats */
+    overflow:flex; /* Clear floats */
 }
 
 .nav-list {
