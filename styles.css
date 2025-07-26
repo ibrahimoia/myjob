@@ -1,0 +1,334 @@
+/*--- Base Styles & Typography ---*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #8A2BE2;
+    font-size: 30px;
+    text-align: center;
+    background-image: linear-gradient(#556B2F, #2F4F4F, #afc5ff);
+}
+
+head { /* Note: 'head' is an HTML element, not typically styled directly in CSS like this */
+    background-color: red;
+    font-size: 40px;
+    font-family: "Noto Sans", Noto Sans, serif;
+}
+
+p {
+    font-size: 15px;
+}
+
+/*--- Global Element Styles ---*/
+div {
+    background-color: none;
+}
+
+img {
+    border-radius: 4px;
+    padding: 0px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    align: left; /* 'align' is not a valid CSS property for tables, use 'text-align' if needed for content */
+    text-align: left;
+}
+
+/*--- Link Styles ---*/
+a:link,
+a:visited {
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: center; /* 'display: center' is not a valid CSS property */
+    align: center; /* 'align' is not a valid CSS property for anchors */
+}
+
+a:hover,
+a:active {
+    background-color: none;
+    border: 2px solid green;
+    display: center; /* 'display: center' is not a valid CSS property */
+    align: left; /* 'align' is not a valid CSS property for anchors */
+}
+
+/*--- Button Styles ---*/
+button {
+    background-color: green;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+.custom-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #218838;
+}
+
+/*--- Form Elements ---*/
+input[type="text"],
+select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    color: blue; /* Changed 'text-color' to 'color' */
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #CAF50; /* This hex code looks incomplete or incorrect, might want to verify */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px; /* Missing border style, e.g., '1px solid black' */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+/*--- Navbar & Menu Styles ---*/
+.navbar {
+    background-color: #333;
+    overflow: hidden; /* Clear floats */
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center the menu items */
+}
+
+.nav-list li {
+    float: left; /* For older browsers or if flexbox isn't used */
+}
+
+.nav-list li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-list li a:hover {
+    background-color: #575757;
+}
+
+.nav-menu {
+    display: znone;
+    flex-direction: column;
+    background-color: black;
+    padding: 10px;
+}
+
+.nav-menu.is-active {
+    display: flex;
+}
+
+/*--- Dropdown Styles ---*/
+.dropdown {
+    position: relative; /* Essential for positioning dropdown content */
+    display: inline-block; /* Allows the dropdown button to sit next to other menu items */
+}
+
+.dropdown-content {
+
+display: none; /* Hide dropdown content by default */
+    
+position: absolute;
+    /* --- KEY CHANGE HERE --- */
+    
+left: 0; /* Aligns the left edge of the dropdown content with the left edge of its parent (.dropdown) */
+    /* If you want it aligned to the right, you would use 'right: 0;' instead */
+    /* You might also need 'top: 100%;' if it's not already positioning correctly below the button */
+    top: 100%; /* Positions the top of the dropdown content right below the bottom of the parent */
+    /* -------------------- */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5; /* Ensure it appears above other content */
+    
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Changed from flex to block for standard dropdown links */
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: green;
+}
+
+/* Show the dropdown menu when hovering over the dropdown button/container */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Alternative: Using a class added by JavaScript for showing/hiding */
+.show {
+    display: block;
+}
+
+/*--- Toggle Menu Styles (e.g., for mobile navigation) ---*/
+.menu-container {
+    position: relative;
+    width: 200px;
+}
+
+#menu-toggle {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    width: flex;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
+
+.menu li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hidden {
+    max-height: 0;
+}
+
+.visible {
+    max-height: 500px; /* Adjust based on content */
+}
+
+/*--- Layout & Utility Classes ---*/
+.mycontainer {
+    display: flex;
+}
+
+.mycontainer > div {
+    padding: 1px 1px;
+    width: 34%;
+    border: 1px solid gold;
+}
+
+.container img {
+    padding: 0px 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or 'contain' depending on your needs */
+}
+
+.home-link {
+    font-size: 24px;
+    color: green;
+    text-decoration: none;
+    align: left; /* 'align' is not a valid CSS property for links */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*--- Video Styles ---*/
+.custom-video { /* Typo in 'heght' corrected to 'height' */
+    width: 1300px;
+    height: 360px;
+}
+
+input[type="text"] {
+   
+ /* Basic text styling */
+  
+  font-family: Arial, sans-serif;
+    
+font-size: 16px;
+    
+color: #333;
+    
+background-color: #f9f9f9;
+
+    
+/* Box model properties */
+    
+padding: 8px 10px;
+    
+margin: 5px 0;
+    
+border: 1px solid #ccc;
+    
+border-radius: 4px; /* Slightly rounded corners */
+
+    
+/* Sizing */
+    
+width: 250px; /* Or use max-width and width: 100% for responsiveness */
+    
+box-sizing: border-box; /* Ensures padding and border are included in the width */
+
+    
+/* Transition for smooth effects on hover/focus */
+    
+transition: all 0.3s ease-in-out;
+
+}
