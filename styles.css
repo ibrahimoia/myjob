@@ -332,3 +332,132 @@ box-sizing: border-box; /* Ensures padding and border are included in the width 
 transition: all 0.3s ease-in-out;
 
 }
+
+.container {
+    width: 90%;
+    margin: 0 auto; /* Center the container */
+}
+.column {
+    width: 48%; /* For a two-column layout */
+    float: left; /* Or use Flexbox/Grid */
+    margin-right: 2%;
+}
+
+
+html {
+    font-size: 16px; /* Base font size */
+}
+h1 {
+    font-size: 2.5rem; /* 2.5 * 16px = 40px */
+}
+p {
+    font-size: 1rem;
+}
+
+.hero-image {
+    width: 100vw;
+    height: 50vh;
+    background-size: cover;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+.flex-item {
+    flex: 1; /* Allows items to grow and shrink */
+    min-width: 200px; /* Prevent items from becoming too small */
+    margin: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+}
+.grid-item {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra space below images */
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Default styles for all screen sizes (mobile-first approach) */
+body {
+    font-size: 16px;
+}
+.container {
+    width: 100%;
+    padding: 15px;
+}
+.menu {
+    display: none; /* Hide menu by default on small screens */
+}
+
+/* Styles for screens wider than 768px (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+    .container {
+        width: 750px;
+        margin: 0 auto; /* Center on larger screens */
+    }
+    .menu {
+        display: block; /* Show menu on larger screens */
+    }
+}
+
+/* Styles for screens wider than 1024px (e.g., desktops) */
+@media (min-width: 1024px) {
+    .container {
+        width: 960px;
+    }
+    .menu li {
+        display: inline-block; /* Horizontal menu */
+    }
+}
+
+/* Mobile */
+h1 { font-size: 2em; }
+
+@media (min-width: 768px) {
+    /* Tablet */
+    h1 { font-size: 2.5em; }
+}
+
+@media (min-width: 1024px) {
+    /* Desktop */
+    h1 { font-size: 3em; }
+}
+
+/* Example using clamp(): font-size will be between 2rem and 4rem,
+   scaling based on 5vw (5% of viewport width) */
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+
+
