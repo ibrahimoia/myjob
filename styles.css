@@ -10,7 +10,7 @@ body {
 }
 
 head { /* Note: 'head' is an HTML element, not typically styled directly in CSS like this */
-    background-color: red;
+    background-color: green;
     font-size: 40px;
     font-family: "Noto Sans", Noto Sans, serif;
 }
@@ -169,7 +169,7 @@ input[type="submit"]:hover {
 
 .dropdown-content {
 
-display: none; /* Hide dropdown content by default */
+display: flex; /* Hide dropdown content by default */
     
 position: absolute;
     /* --- KEY CHANGE HERE --- */
@@ -196,12 +196,12 @@ left: 0; /* Aligns the left edge of the dropdown content with the left edge of i
 }
 
 .dropdown-content a:hover {
-    background-color: green;
+    background-color: blue;
 }
 
 /* Show the dropdown menu when hovering over the dropdown button/container */
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
 }
 
 /* Alternative: Using a class added by JavaScript for showing/hiding */
@@ -216,7 +216,7 @@ left: 0; /* Aligns the left edge of the dropdown content with the left edge of i
 }
 
 #menu-toggle {
-    background-color: green;
+    background-color: dark-green;
     color: white;
     padding: 5px;
     border: none;
@@ -225,7 +225,7 @@ left: 0; /* Aligns the left edge of the dropdown content with the left edge of i
 }
 
 .menu {
-    list-style: none;
+    list-style: flex;
     padding: 0;
     margin: 0;
     background-color: #f1f1f1;
@@ -272,7 +272,7 @@ left: 0; /* Aligns the left edge of the dropdown content with the left edge of i
 
 .home-link {
     font-size: 24px;
-    color: green;
+    color: red;
     text-decoration: none;
     align: left; /* 'align' is not a valid CSS property for links */
 }
