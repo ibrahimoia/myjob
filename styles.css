@@ -436,7 +436,7 @@ body {
         width: 960px;
     }
     .menu li {
-        display: inline-block; /* Horizontal menu */
+        display:block; /* Horizontal menu */
     }
 }
 
