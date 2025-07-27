@@ -129,7 +129,7 @@ input[type="submit"]:hover {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: none; /* Arrange items horizontally */
+    display: flex; /* Arrange items horizontally */
     justify-content: center; /* Center the menu items */
 }
 
@@ -436,7 +436,7 @@ body {
         width: 960px;
     }
     .menu li {
-        display:block; /* Horizontal menu */
+        display:flex; /* Horizontal menu */
     }
 }
 
@@ -458,6 +458,5 @@ h1 { font-size: 2em; }
 h1 {
   font-size: clamp(2rem, 5vw, 4rem);
 }
-
 
 
