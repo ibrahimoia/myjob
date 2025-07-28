@@ -6,7 +6,11 @@ body {
     color: #8A2BE2;
     font-size: 30px;
     text-align: center;
-    background-image: linear-gradient(#556B2F, #2F4F4F, #afc5ff);
+    background-image: url('BG.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 head { /* Note: 'head' is an HTML element, not typically styled directly in CSS like this */
