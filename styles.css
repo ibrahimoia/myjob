@@ -151,7 +151,7 @@ input[type="submit"]:hover {
 }
 
 .nav-menu {
-    display: znone;
+    display: none;
     flex-direction: column;
     background-color: black;
     padding: 10px;
@@ -436,7 +436,7 @@ body {
         width: 960px;
     }
     .menu li {
-        display:none; /* Horizontal menu */
+        display:block; /* Horizontal menu */
     }
 }
 
@@ -458,5 +458,6 @@ h1 { font-size: 2em; }
 h1 {
   font-size: clamp(2rem, 5vw, 4rem);
 }
+
 
 
