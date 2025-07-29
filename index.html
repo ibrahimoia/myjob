@@ -10,12 +10,26 @@ document.onmousedown = rtclickcheck;
 <head >
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>MY CV</title>
+<title>PORTFOLIO</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
 <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <button id="menu-toggle">☰ Menu</button>
+    <ul id="menu" class="menu hidden">
+      <li><a href="web-file.html">Website Design</a></li>
+      <li><a href="graphic-file.html">Graphic Design</a></li>
+	<li><a href="desktopApp-file.html">desktop App</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+
 <div  style="font-weight:bold" >
 <video style="width: 100%; height: 200px; object-fit: cover;" autoplay muted loop>
 <source src="cloud.mp4" type="video/mp4">
@@ -28,13 +42,12 @@ Your browser does not support the video tag.
 
 </div>
 
-</head>
+
 <nav aria-label="breadcrumb" class="header" style="border-radius: 5px ;font-weight:bold;padding: 20px">
-<h style="color:white;font-size: 50px;font-family:Noto Sans " >PORTFOLIO</h>
+<h style="color:DarkBlue;font-size: 50px;font-family:Noto Sans " >PORTFOLIO</h>
 <p id = 'ctime' style="color:white" >**************</p>
-<h2 style="color:gold;font-size: 15px" > IBRAHIM OMER</h2>
+<h2 style="color:gray;font-size: 15px" > IBRAHIM OMER</h2>
 <p style="color:blue;font-size:15px"></p>
-<p style="color:white;font-size:25px">Web Deployment, Desktop Application Development, Creative and Graphic Design</p>
 </nav>
 
 <div class="container" style="background-color:#556803;font-weight:bold" >
@@ -56,9 +69,6 @@ Your browser does not support the video tag.
 </marquee>
 </div>-->
 
-
-<body>
-
 <p style="font-size:25px;font-weight:bold"></p>
 <form></form>
 <div class="container" style="background-color:gray;text-align: center;text-justify: inter-word; padding-top: 20px; padding-right: 20px; padding-bottom: 20px;padding-left: 20px;background-image: linear-gradient(#afc5ff,white,#008B8B)">
@@ -66,27 +76,26 @@ Your browser does not support the video tag.
 <thead class="table-dark">
 </div>
 </head>
-<body>
 
 <a href = "web-file.html">
 <div class="mycontainer" style="padding: 0px 0px">
 <div style="background-color:#2F4F4F;">
 <img src="website-main.jpg" alt="Web" style="height:280px; width:420px">
 </a>
-<h3 style="color:white">Websites Development</h3>
+<h3 style="color:white;font-weight:bold">Websites Development</h3>
 </div>
 
 <a href = "graphic-file.html">
 <div style="background-color:#2F4F4F;">
 <img src="graphic-main.jpg" alt="Web" style="height:280px; width:420px" >
 </a>
-<h3 style="color:white">Graphic Design</h3>
+<h3 style="color:white;font-weight:bold">Graphic Design</h3>
 </div>
-<a href = "#">
+<a href = "desktopApp-file.html">
 <div style="background-color:#2F4F4F;">
 <img src="desktop-main.png" alt="Web" style="height:280px; width:420px">
 </a>
-<h3 style="color:white">Desktop Applications</h3>
+<h3 style="color:white;font-weight:bold">Desktop Applications</h3>
 </div>
 </div>
 </tbody>
@@ -95,9 +104,8 @@ Your browser does not support the video tag.
 <p>***</p>
 <py-script>
 </py-script>
-</body>
 <nav style="color:maroon;align:center">
-<div class="container" style="align:center; background-color:black;border: 2px solid gold; color:gold;font-weight:bold;padding: 20px" >
+<div class="container" style="align:center; background-color:#333;border: 2px solid gold; color:gold;font-weight:bold;padding: 20px" >
 <footer style="font-size: 25px">
 <marquee direction="left">
 <p style="color:#ADFF2F" >WEB SITE DEVELOPMENT - DESK TOP APPLICATIONS - GRAPHIC DESIGN - COMPANY PROFILE - STUDENT PROJECTS - SHOPS INTERFACE DESIGNIN AND MORE ... </p>
@@ -107,11 +115,21 @@ Your browser does not support the video tag.
 <a href = "https://wa.me/97455730263? text=Hello%20Ibrahim%2C%20I%20would%20like%20to%20connect%20with%20you" ><img src="wats.jpeg" alt="HTML tutorial" style="width:42px;height:42px;"> </a>
 </p>
 <p style="font-size:20px;align:center">gibrahimoia@gmail.com</p>
-<p style="font-size:20px ;display:center"><a style="color:white ;align:center" href="https://drive.google.com/file/d/1ikrKSeUxenn7-bpAMEN-xkXjO_TqUkvs/view?usp=sharing">Click Here to View My Document</a></p>
-<p style="font-size:20px ;display:center"><a style="color:white ;align:center" href="https://drive.google.com/file/d/1QjLUA3CHCszmux7a7CtzMTRFg3W7843F/view?usp=sharing">Click Here to View My Works</a></p>
+<p style="font-size:20px ;display:center"><a style="color:white ;align:center" 
 </footer>
 </div>
 </nav>
-<body>
+<script src="script.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    toggleButton.addEventListener("click", function () {
+      navMenu.classList.toggle("is-active");
+    });
+  });
+</script>
 </body>
 </html>

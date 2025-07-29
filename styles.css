@@ -6,7 +6,7 @@ body {
     color: #8A2BE2;
     font-size: 30px;
     text-align: center;
-    background-image: url('BG.png');
+    background-image: url('BG2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -66,7 +66,7 @@ a:active {
 
 /*--- Button Styles ---*/
 button {
-    background-color: green;
+    background-color: MidnightBlue;
     color: white;
     padding: 12px 24px;
     border: none;
@@ -162,7 +162,7 @@ input[type="submit"]:hover {
 }
 
 .nav-menu.is-active {
-    display: block;
+    display: flex;
 }
 
 /*--- Dropdown Styles ---*/
@@ -338,7 +338,7 @@ transition: all 0.3s ease-in-out;
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto; /* Center the container */
 }
 .column {
