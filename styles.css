@@ -1,15 +1,16 @@
-/*--- Base Styles & Typography ---*/
+/*--- Base Styles & Typography --- CV-P-5*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f4f4f4;
-    color: #8A2BE2;
+    color: black;
     font-size: 30px;
     text-align: center;
     background-image: url('BG2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    
 
 }
 
@@ -475,5 +476,24 @@ h1 {
     }
 
 
+nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+    background-color: #333;
+    display: flex; /* The key to using flexbox */
+    justify-content: flex-start; /* Or content, space-between, flex-start, etc. */
+  }
 
+  nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 50px 16px;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    background-color: #575757;
+  }
 
