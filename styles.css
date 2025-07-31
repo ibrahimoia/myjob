@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f4f4f4;
-    color: black;
+    color: #333;
     font-size: 30px;
     text-align: center;
     background-image: url('BG2.png');
@@ -26,7 +26,7 @@ p {
 
 /*--- Global Element Styles ---*/
 div {
-    background-color: none;
+    background-color: #007BFF;
 }
 
 img {
@@ -60,7 +60,7 @@ a:visited {
 a:hover,
 a:active {
     background-color: none;
-    border: 2px solid green;
+    border: 2px solid #007BFF;
     display: center; /* 'display: center' is not a valid CSS property */
     align: left; /* 'align' is not a valid CSS property for anchors */
 }
@@ -497,3 +497,21 @@ nav ul {
     background-color: #575757;
   }
 
+/* aside */
+
+
+    main {
+      display: flex;
+      gap: 20px;
+    }
+
+    article {
+      flex: 3;
+    }
+
+    aside {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      flex: 1;
+    }
