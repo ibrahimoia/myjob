@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<SCRIPT language=JavaScript>
+<!-- http://www.spacegun.co.uk -->
+var message = "function disabled";
+function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+document.onmousedown = rtclickcheck;
+</SCRIPT>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Pong Game</title>
+    <link rel="stylesheet" href="stylegame.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <canvas id="pongCanvas" width="800" height="500"></canvas>
+    </div>
+    <script src="pong.js"></script>
+</body>
+</html>
