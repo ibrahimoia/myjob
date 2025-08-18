@@ -6,10 +6,11 @@ body {
     color: #333;
     font-size: 30px;
     text-align: center;
-    background-image: url('BG2.png');
+    background-image: url('bg2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    
     
 
 }
@@ -515,3 +516,29 @@ nav ul {
       border: 1px solid #ccc;
       flex: 1;
     }
+.myimage{
+width:0%;
+translate:320px 0
+transition:4s;
+animation-name: panner;
+animation-duration: 20s;
+animation-delay: 2s;
+}
+
+@keyframes panner{
+0%{
+width:0%;
+background:red;
+}
+
+50%{
+width:50%;
+background:green;
+translate:320px 0
+
+}
+50%{
+display:inline;
+}
+
+}
