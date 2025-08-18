@@ -6,7 +6,7 @@ body {
     color: #333;
     font-size: 30px;
     text-align: center;
-    background-image: url('BG2.png');
+    background-image: url('bg2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -543,3 +543,4 @@ display:inline;
 
 
 }
+
