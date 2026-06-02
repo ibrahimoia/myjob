@@ -1,23 +1,165 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<SCRIPT language=JavaScript>
-<!-- http://www.spacegun.co.uk -->
-var message = "function disabled";
-function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
-if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
-document.onmousedown = rtclickcheck;
-</SCRIPT>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Pong Game</title>
-    <link rel="stylesheet" href="stylegame.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Two Player Number Game</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.player {
+    background: #ffffff;
+    color: #333;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.player:hover {
+    transform: translateY(-5px);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+#resultBox {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    min-width: 260px;
+}
+
+.win {
+    color: #00ffae;
+    font-weight: bold;
+}
+
+.lose {
+    color: #ff4d4d;
+}
+
+.random {
+    font-size: 22px;
+    margin: 10px 0;
+}
+</style>
 </head>
 <body>
-<a href = "index.html" ><img src="exit.jpg" alt="Exit" style="width:42px;height:42px;"> </a>
-    <div id="game-container">
-        <canvas id="pongCanvas" width="800" height="500"></canvas>
+
+<h2>🎮 Two Player Number Game</h2>
+
+<div class="container">
+    <div class="player">
+        <h3>Player 1</h3>
+        <input type="number" id="p1" min="1" max="10" placeholder="1–10" />
     </div>
-    <script src="pong.js"></script>
+
+    <div class="player">
+        <h3>Player 2</h3>
+        <input type="number" id="p2" min="1" max="10" placeholder="1–10" />
+    </div>
+</div>
+
+<button id="playBtn">Play</button>
+
+<div id="resultBox">
+    <div class="random" id="randomNum">🎲 ?</div>
+    <div id="resultText">Enter numbers and press Play</div>
+</div>
+
+<script>
+const p1Input = document.getElementById("p1");
+const p2Input = document.getElementById("p2");
+const resultText = document.getElementById("resultText");
+const randomNumDisplay = document.getElementById("randomNum");
+
+function getNumber(input) {
+    return Number(input.value);
+}
+
+function playGame() {
+    const p1 = getNumber(p1Input);
+    const p2 = getNumber(p2Input);
+
+    if (!p1 || !p2 || p1 < 1 || p2 < 1 || p1 > 10 || p2 > 10) {
+        resultText.textContent = "⚠️ Enter valid numbers (1–10)";
+        resultText.className = "lose";
+        return;
+    }
+
+    const random = Math.floor(Math.random() * 10) + 1;
+    randomNumDisplay.textContent = `🎲 ${random}`;
+
+    const win1 = p1 === random;
+    const win2 = p2 === random;
+
+    let message = "";
+
+    if (win1 && win2) {
+        message = "🎉 Both Players WIN!";
+        resultText.className = "win";
+    } else if (win1) {
+        message = "🏆 Player 1 Wins!";
+        resultText.className = "win";
+    } else if (win2) {
+        message = "🏆 Player 2 Wins!";
+        resultText.className = "win";
+    } else {
+        message = "😢 Nobody wins. Try again!";
+        resultText.className = "lose";
+    }
+
+    resultText.textContent = message;
+}
+
+document.getElementById("playBtn").addEventListener("click", playGame);
+</script>
+
 </body>
 </html>
